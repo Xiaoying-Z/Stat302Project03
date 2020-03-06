@@ -1,7 +1,7 @@
 ---
 title: "Project 3: Packages"
-output: rmarkdown::html_vignette
 author: "Xiaoying Zhao"
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Packages}
   %\VignetteEngine{knitr::rmarkdown}
