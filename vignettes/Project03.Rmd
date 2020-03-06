@@ -1,0 +1,20 @@
+---
+title: "Project 3: Packages"
+output: rmarkdown::html_vignette
+author: "Xiaoying Zhao"
+vignette: >
+  %\VignetteIndexEntry{Packages}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Stat302Project03)
+```
