@@ -10,8 +10,9 @@
 #'   the value of the parameter \code{alternative}, and the numeric \code{p-value}.
 #'
 #' @examples
-#' my_pow(4)
-#' my_pow(4,power = 3)
+#' my_t.test(lifeExp, "two.sided", 60)
+#' my_t.test(lifeExp, "less", 60)
+#' my_t.test(lifeExp, "greater", 60)
 #'
 #' @export
 my_t.test <- function(x, alternative, mu){
