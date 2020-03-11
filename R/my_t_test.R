@@ -10,9 +10,15 @@
 #'   the value of the parameter \code{alternative}, and the numeric \code{p-value}.
 #'
 #' @examples
-#' my_t.test(lifeExp, "two.sided", 60)
-#' my_t.test(lifeExp, "less", 60)
-#' my_t.test(lifeExp, "greater", 60)
+#' my_t.test(my_gapminder$lifeExp, "two.sided", 60)  # P = 0.09322877
+#' With \code{\alpha = 0.05}, we are 95% confident that the observed mean does
+#'   not equal to 60.
+#' my_t.test(my_gapminder$lifeExp, "less", 60)       # P = 0.04661438
+#' # With \code{\alpha = 0.05}, we are 95% confident that the observed mean is
+#' # less than 60.
+#' my_t.test(my_gapminder$lifeExp, "greater", 60)    # P = 0.9533856
+#' With \code{\alpha = 0.05}, we have a \code{p-value} larger than \code{\alpha},
+#'   we cannot draw conclusion from this result.
 #'
 #' @export
 my_t.test <- function(x, alternative, mu){
