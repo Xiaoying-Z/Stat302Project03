@@ -12,6 +12,7 @@
 #' @return Numeric represrnting the coefficients and statistics of the fitting
 #'
 #' @examples
+#' my_model <- my_lm(Sepal.Length~Sepal.Width, data = my_iris)
 #'
 #' @export
 my_lm <- function(fnc, data){

@@ -8,10 +8,7 @@
 #' @return Numeric represrnting \code{x} raised to the power of \code{power}
 #'
 #' @examples
-#' my_pow(4)
-#' my_pow(4,power = 3)
-#'
-#' @import class tidyverse tidyr rsample randomForest
+#' my_rf_cv(5)
 #'
 #' @export
 my_rf_cv <- function(k){

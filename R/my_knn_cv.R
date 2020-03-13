@@ -7,11 +7,8 @@
 #'
 #' @return Numeric represrnting \code{x} raised to the power of \code{power}
 #'
-#' @import class tidyverse tidyr rsample randomForest
-#'
 #' @examples
-#' my_pow(4)
-#' my_pow(4,power = 3)
+#' my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){

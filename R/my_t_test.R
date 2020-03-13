@@ -10,7 +10,7 @@
 #'   the value of the parameter \code{alternative}, and the numeric \code{p-value}.
 #'
 #' @examples
-#'
+#' my_t.test(my_iris$Sepal.Length, "less", 5)
 #'
 #' @export
 my_t.test <- function(x, alternative, mu){
