@@ -19,7 +19,6 @@ Numeric represrnting \code{x} raised to the power of \code{power}
 This function raises input to a power
 }
 \examples{
-my_pow(4)
-my_pow(4,power = 3)
+my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)
 
 }

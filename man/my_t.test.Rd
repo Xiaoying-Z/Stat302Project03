@@ -22,6 +22,6 @@ A list contains the numeric test statistic, the degree of freedom,
 This function performs one and two sample t-tests on vectors of data.
 }
 \examples{
-
+my_t.test(my_iris$Sepal.Length, "less", 5)
 
 }

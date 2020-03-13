@@ -23,5 +23,6 @@ used to carry out regression, single stratum analysis
 of variance and analysis of covariance.
 }
 \examples{
+my_model <- my_lm(Sepal.Length~Sepal.Width, data = my_iris)
 
 }
