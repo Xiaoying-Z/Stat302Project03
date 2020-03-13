@@ -10,6 +10,8 @@
 #' @examples
 #' my_rf_cv(5)
 #'
+#' @import class magrittr randomForest magrittr dplyr
+#'
 #' @export
 my_rf_cv <- function(k){
   n <- nrow(iris)

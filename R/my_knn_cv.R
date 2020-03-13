@@ -10,6 +10,8 @@
 #' @examples
 #' my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)
 #'
+#' @import class magrittr randomForest magrittr dplyr
+#'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){
   n <- nrow(train)
