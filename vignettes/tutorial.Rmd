@@ -1,19 +1,31 @@
 ---
-title: "Project 3: PACKAGE_NAME Tutorial"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Project 3: PACKAGE_NAME Tutorial}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "Tutorial"
+author: "Xiaoying Zhao"
+date: "3/13/2020"
+output: html_document
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r setup}
+```{r}
 library(Stat302Project03)
 ```
+
+```{r}
+my_t.test(my_gapminder$lifeExp, "two.sided", 60)  # P = 0.09322877
+my_t.test(my_gapminder$lifeExp, "less", 60)       # P = 0.04661438
+my_t.test(my_gapminder$lifeExp, "greater", 60)    # P = 0.9533856
+```
+With \code{cut-off = 0.05}, we are 95% confident that the observed mean is
+less than 60.
+With \code{cut-off = 0.05}, we are 95% confident that the observed mean does
+not equal to 60.
+With \code{cut-off = 0.05}, we have a \code{p-value} larger than \code{cut-off value},
+we cannot draw conclusion from this result.
+
+```{r}
+my_lm(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+```
+

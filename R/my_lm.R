@@ -1,15 +1,17 @@
 #' Fitting Linear Model function
 #'
-#' This function raises input to a power
-#' @param x Numeric input to be raised to the power of \code{power}
-#' @param power Numeric input for the power that \code{x} will be raised to,
-#'   default to \code{2}
+#' This function is used to fit linear models. It can be
+#' used to carry out regression, single stratum analysis
+#' of variance and analysis of covariance.
+#' @param function 	An object of class "formula": a symbolic description
+#'   of the model to be fitted.
+#' @param data An optional data frame, list or environment
+#'   (or object coercible by as.data.frame to a data frame) containing
+#'   the variables in the model.
 #'
-#' @return Numeric represrnting \code{x} raised to the power of \code{power}
+#' @return Numeric represrnting the coefficients and statistics of the fitting
 #'
 #' @examples
-#' my_pow(4)
-#' my_pow(4,power = 3)
 #'
 #' @export
 my_lm <- function(fnc, data){

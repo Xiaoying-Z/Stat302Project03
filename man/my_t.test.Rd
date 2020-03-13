@@ -19,17 +19,9 @@ A list contains the numeric test statistic, the degree of freedom,
   the value of the parameter \code{alternative}, and the numeric \code{p-value}.
 }
 \description{
-This function raises input to a power
+This function performs one and two sample t-tests on vectors of data.
 }
 \examples{
-my_t.test(my_gapminder$lifeExp, "two.sided", 60)  # P = 0.09322877
-# With \alpha = 0.05, we are 95\% confident that the observed mean does
-# not equal to 60.
-my_t.test(my_gapminder$lifeExp, "less", 60)       # P = 0.04661438
-# With \alpha = 0.05, we are 95\% confident that the observed mean is
-# less than 60.
-my_t.test(my_gapminder$lifeExp, "greater", 60)    # P = 0.9533856
-# With \alpha = 0.05, we have a \code{p-value} larger than \alpha,
-# we cannot draw conclusion from this result.
+
 
 }

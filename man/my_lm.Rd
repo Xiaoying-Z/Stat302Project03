@@ -7,19 +7,21 @@
 my_lm(fnc, data)
 }
 \arguments{
-\item{x}{Numeric input to be raised to the power of \code{power}}
+\item{data}{An optional data frame, list or environment
+(or object coercible by as.data.frame to a data frame) containing
+the variables in the model.}
 
-\item{power}{Numeric input for the power that \code{x} will be raised to,
-default to \code{2}}
+\item{function}{An object of class "formula": a symbolic description
+of the model to be fitted.}
 }
 \value{
-Numeric represrnting \code{x} raised to the power of \code{power}
+Numeric represrnting the coefficients and statistics of the fitting
 }
 \description{
-This function raises input to a power
+This function is used to fit linear models. It can be
+used to carry out regression, single stratum analysis
+of variance and analysis of covariance.
 }
 \examples{
-my_pow(4)
-my_pow(4,power = 3)
 
 }
