@@ -7,18 +7,15 @@
 my_rf_cv(k)
 }
 \arguments{
-\item{x}{Numeric input to be raised to the power of \code{power}}
-
-\item{power}{Numeric input for the power that \code{x} will be raised to,
-default to \code{2}}
+\item{k}{number of folds}
 }
 \value{
-Numeric represrnting \code{x} raised to the power of \code{power}
+a numeric with the cross-validation error
 }
 \description{
 This function raises input to a power
 }
 \examples{
-my_rf_cv(5)
+my_rf_cv(2)
 
 }

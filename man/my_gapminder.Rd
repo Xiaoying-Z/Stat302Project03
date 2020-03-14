@@ -20,7 +20,7 @@ http://www.gapminder.org/data/
 my_gapminder
 }
 \description{
-Excerpt of the \code{\link[datasets]{Gapminder}} dataset on life expectancy,
+Excerpt of the \code{\link[datasets]{my_gapminder}} dataset on life expectancy,
 GDP per capita, and population by country.
 }
 \keyword{datasets}

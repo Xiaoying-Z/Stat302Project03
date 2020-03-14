@@ -7,12 +7,12 @@
 my_lm(fnc, data)
 }
 \arguments{
+\item{fnc}{An object of class "formula": a symbolic description
+of the model to be fitted.}
+
 \item{data}{An optional data frame, list or environment
 (or object coercible by as.data.frame to a data frame) containing
 the variables in the model.}
-
-\item{function}{An object of class "formula": a symbolic description
-of the model to be fitted.}
 }
 \value{
 Numeric represrnting the coefficients and statistics of the fitting

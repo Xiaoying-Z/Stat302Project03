@@ -7,13 +7,17 @@
 my_knn_cv(train, cl, k_nn, k_cv)
 }
 \arguments{
-\item{x}{Numeric input to be raised to the power of \code{power}}
+\item{train}{the training data set}
 
-\item{power}{Numeric input for the power that \code{x} will be raised to,
-default to \code{2}}
+\item{cl}{factor of true classifications of training set}
+
+\item{k_nn}{number of neighbours considered}
+
+\item{k_cv}{integer representing the number of folds}
 }
 \value{
-Numeric represrnting \code{x} raised to the power of \code{power}
+a list with a vector of the predicted class and
+  a numeric with the cross-validation misclassification error
 }
 \description{
 This function raises input to a power

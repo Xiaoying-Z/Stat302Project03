@@ -1,11 +1,13 @@
 #' K-nearest Neighbors function
 #'
 #' This function raises input to a power
-#' @param x Numeric input to be raised to the power of \code{power}
-#' @param power Numeric input for the power that \code{x} will be raised to,
-#'   default to \code{2}
+#' @param train the training data set
+#' @param cl factor of true classifications of training set
+#' @param k_nn number of neighbours considered
+#' @param k_cv integer representing the number of folds
 #'
-#' @return Numeric represrnting \code{x} raised to the power of \code{power}
+#' @return a list with a vector of the predicted class and
+#'   a numeric with the cross-validation misclassification error
 #'
 #' @examples
 #' my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)

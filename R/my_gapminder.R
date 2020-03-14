@@ -1,6 +1,6 @@
 #' Gapminder data
 #'
-#' Excerpt of the \code{\link[datasets]{Gapminder}} dataset on life expectancy,
+#' Excerpt of the \code{\link[datasets]{my_gapminder}} dataset on life expectancy,
 #' GDP per capita, and population by country.
 #'
 #' @format a data frame with 150 observations and 3 variables:

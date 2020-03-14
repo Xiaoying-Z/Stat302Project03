@@ -3,7 +3,7 @@
 #' This function is used to fit linear models. It can be
 #' used to carry out regression, single stratum analysis
 #' of variance and analysis of covariance.
-#' @param function 	An object of class "formula": a symbolic description
+#' @param fnc 	An object of class "formula": a symbolic description
 #'   of the model to be fitted.
 #' @param data An optional data frame, list or environment
 #'   (or object coercible by as.data.frame to a data frame) containing
@@ -14,6 +14,7 @@
 #' @examples
 #' my_model <- my_lm(Sepal.Length~Sepal.Width, data = my_iris)
 #'
+#' @import stats
 #' @export
 my_lm <- function(fnc, data){
   x <- model.matrix(fnc, data)

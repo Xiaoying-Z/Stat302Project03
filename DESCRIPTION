@@ -16,7 +16,9 @@ Suggests:
     testthat (>= 2.1.0),
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    kableExtra,
+    dataset
 VignetteBuilder: knitr
 Depends: R (>= 3.2)
-Import: dplyr, magrittr, class, randomForest, stats, ggplot2, tidyverse
+Imports: dplyr, magrittr, class, randomForest, stats, ggplot2, tidyverse

@@ -12,6 +12,8 @@
 #' @examples
 #' my_t.test(my_iris$Sepal.Length, "less", 5)
 #'
+#' @imprt stats
+#'
 #' @export
 my_t.test <- function(x, alternative, mu){
   if (alternative != "two.sided" &

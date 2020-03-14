@@ -1,32 +1,30 @@
 #' Random Forest function
 #'
 #' This function raises input to a power
-#' @param x Numeric input to be raised to the power of \code{power}
-#' @param power Numeric input for the power that \code{x} will be raised to,
-#'   default to \code{2}
+#' @param k number of folds
 #'
-#' @return Numeric represrnting \code{x} raised to the power of \code{power}
+#' @return a numeric with the cross-validation error
 #'
 #' @examples
-#' my_rf_cv(5)
+#' my_rf_cv(2)
 #'
 #' @import class magrittr randomForest magrittr dplyr
 #'
 #' @export
 my_rf_cv <- function(k){
-  n <- nrow(iris)
+  data(my_gapminder)
+  n <- nrow(my_gapminder)
   inds <- sample(rep(1:k, length = n))
   cv_err <- rep(NA, k)
   for (i in 1:k) {
-    data_train <- iris[inds != i,]
-    data_test <- iris[inds == i,]
+    data_train <- my_gapminder[inds != i,]
+    data_test <- my_gapminder[inds == i,]
     #building up models using randomForest
-    length_output <- randomForest(Sepal.Length ~ Sepal.Width +
-                                    Petal.Length + Petal.Width,
+    lifeExp_output <- randomForest(lifeExp ~ gdpPercap,
                                   data = data_train, ntree = 100)
-    prediction <- predict(length_output, data_test[, -1])
+    prediction <- predict(lifeExp_output, data_test[, 6])
     #record errors for each iteration
-    cv_err[i] <- mean((prediction - data_test$Sepal.Length)^2)
+    cv_err[i] <- mean((prediction - data_test$lifeExp)^2)
   }
   return(mean(cv_err))
 }
