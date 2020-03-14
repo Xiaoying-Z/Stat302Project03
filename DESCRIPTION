@@ -18,7 +18,7 @@ Suggests:
     knitr,
     rmarkdown,
     kableExtra,
-    dataset
+    datasets
 VignetteBuilder: knitr
 Depends: R (>= 3.2)
 Imports: dplyr, magrittr, class, randomForest, stats, ggplot2, tidyverse
