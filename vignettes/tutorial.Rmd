@@ -29,11 +29,18 @@ my_t.test(my_gapminder$lifeExp, "two.sided", 60)  # P = 0.09322877
 my_t.test(my_gapminder$lifeExp, "less", 60)       # P = 0.04661438
 my_t.test(my_gapminder$lifeExp, "greater", 60)    # P = 0.9533856
 ```
-With \code{cut-off = 0.05}, we are 95% confident that the observed mean is
-less than 60.
-With \code{cut-off = 0.05}, we are 95% confident that the observed mean does
-not equal to 60.
-With \code{cut-off = 0.05}, we have a \code{p-value} larger than \code{cut-off value},
+The first line of code evaluate the following hypothesis test:
+$H_0: \mu = 60$   
+$H_a: \mu \neq 60$ 
+With $\alpha = 0.05$ and $P = 0.0932$, we are 95% confident that the observed mean does not equal to 60.
+The second line of code evaluate the following hypothesis test:
+$H_0: \mu = 60$   
+$H_a: \mu < 60$ 
+With $\alpha = 0.05$ and $P = 0.0466$, we are 95% confident that the observed mean is less than 60.
+The first line of code evaluate the following hypothesis test:
+$H_0: \mu = 60$   
+$H_a: \mu \neq 60$ 
+With $\alpha = 0.05$ and $P = 0.953$, we have a \code{p-value} larger than $\alpha = 0.05$,
 we cannot draw conclusion from this result.
 
 # Tutorial of my_lm
