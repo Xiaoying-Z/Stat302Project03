@@ -15,8 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(Stat302Project03)
+library(ggplot2)
 ```
 
+# Tutorial of my_t.test
 ```{r}
 my_t.test(my_gapminder$lifeExp, "two.sided", 60)  # P = 0.09322877
 my_t.test(my_gapminder$lifeExp, "less", 60)       # P = 0.04661438
@@ -29,7 +31,81 @@ not equal to 60.
 With \code{cut-off = 0.05}, we have a \code{p-value} larger than \code{cut-off value},
 we cannot draw conclusion from this result.
 
+# Tutorial of my_lm
 ```{r}
-my_lm(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+test <- my_lm(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+my_coef <- test[, 1]
+my_matrix <- model.matrix(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+y_hat <- my_matrix %*% as.matrix(my_coef)
+
+my_data <- data.frame("Actual" = my_gapminder$lifeExp,
+                      "Fitted" = y_hat,
+                      "Continent" = my_gapminder$continent)
+ggplot(my_data,aes(x = Actual, y = Fitted, color = Continent)) + 
+  geom_point() + theme_bw(base_size = 20)
 ```
+
+# Tutorial of my_knn_cv
+```{r}
+k_cv <- 5
+cv_err <- rep(NA, k_cv)
+for (i in 1:10) {
+  my_knn <- my_knn_cv(cbind(my_gapminder[, 4], my_gapminder[,6]), 
+                     my_gapminder$continent, i, k_cv)
+  cv_err[i] <- my_knn[[2]]
+}
+  cv_err
+
+```
+
+# Tutorial of my_rf_cv
+```{r}
+k = c(2, 5, 10)
+MSE = rep(NA, 3)
+cv_err <- matrix(NA, 3, 30)
+for (i in 1:3){
+  cur <- k[i]
+  for (j in 1:30){
+    cv_err[i, j] <- my_rf_cv(cur)
+  }
+  MSE[i] = mean(cv_err[i,])
+}
+
+MSE
+```
+
+```{r}
+temp = data.frame(c(cv_err[1,], cv_err[2,], cv_err[3,]))
+my_data = data.frame("k" = rep(k, each = 30), 
+                     "error" = temp)
+names(my_data)[2] = "error"
+ggplot(my_data, aes(x = k, y = error)) + geom_boxplot()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
