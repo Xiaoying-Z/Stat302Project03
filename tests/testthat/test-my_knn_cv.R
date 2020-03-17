@@ -13,3 +13,8 @@ test_that("non-dataset input throws error", {
   expect_error(my_knn_cv("qqq", "qqq", 5, 5))
 })
 
+test_that("prediction correct", {
+  expect_true(my_rf_cv(5) / var(my_gapminder$lifeExp) < 1)
+  expect_true(my_rf_cv(10) / var(my_gapminder$lifeExp) < 1)
+})
+
