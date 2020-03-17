@@ -37,7 +37,7 @@ my_t.test(my_gapminder$lifeExp, "greater", 60)    # P = 0.9533856
 The first line of code evaluate the following hypothesis test:  
 $H_0: \mu = 60$   
 $H_a: \mu \neq 60$   
-With $\alpha = 0.05$ and $P = 0.0932$, we cannot draw conclusion from this result.  
+With $\alpha = 0.05$ and $P = 0.0932$, we cannot draw a conclusion from this result.  
 The second line of code evaluate the following hypothesis test:  
 $H_0: \mu = 60$   
 $H_a: \mu < 60$   
@@ -45,7 +45,7 @@ With $\alpha = 0.05$ and $P = 0.0466$, we reject $H_0$ in favor of $H_a$ that th
 The third line of code evaluate the following hypothesis test:  
 $H_0: \mu = 60$   
 $H_a: \mu \neq 60$   
-With $\alpha = 0.05$ and $P = 0.953$, we have a `p-value` larger than $\alpha = 0.05$, we cannot draw conclusion from this result.
+With $\alpha = 0.05$ and $P = 0.953$, we have a `p-value` larger than $\alpha = 0.05$, we cannot draw a conclusion from this result.
 
 # Tutorial of my_lm
 ```{r}
@@ -68,7 +68,7 @@ coeff <- formatC(test$Estimate[2], digit = 3)
 pval <- formatC(test$Pr...t..[2], digit = 3)
 ```
 The coefficient of `gdpPercap` of the regression model is `r coeff`. This tells us that there is a positive but not strong relation between `gdpPercap` and `lifeExp`.  
-The `p-value` for the coefficient of `gdpPercap` is `r pval`, which is less than $\alpha = 0.05$, telling us that we can reject the null hypothesis "cofficient of `gdpPercap` $= 0$" in favor of the alternative hupothesis: `gdpPercap` is statistically signifigent for interpreting `lifeExp`.  
+The `p-value` for the coefficient of `gdpPercap` is `r pval`, which is less than $\alpha = 0.05$, telling us that we can reject the null hypothesis "coefficient of `gdpPercap` $= 0$" in favor of the alternative hypothesis: `gdpPercap` is statistically significant for interpreting `lifeExp`.  
 Graph 1 is the plot of Actual value vs. Fitted value, and the fitted values match the actual values well. The curved shapes demonstrate a non-linear growth of `lifeExp` at a high `gdpPercap`
 
 # Tutorial of my_knn_cv
@@ -87,8 +87,8 @@ for (i in 1:10) {
                        "CV Error" = cv_err)
   kable(my_err)
 ```
-Based on the training error, I will choose the model with `k_nn` $= 1$ because it has no error. However, if I look at CV misclassification rate, I will choose the model with `k_nn` $= 7$ because the CV misclassification rate steadly decreases when `k_nn` goes from $1$ to $7$ and starts to fluctuates after $7$.  
-In practice, I will choose `k_nn`$= 7$. From the lecture, we know that `k_nn` $= 1$ always gives the smallest error on training datasets, which is the result from overfitting, and the training error steadly increased as we increasing the value of `k_nn`. The test error, on the other hand, has a U-shape as we increasing the value of `k_nn`. By using cross-validation, we are able to test our model on all data, and thus identify the optimal `k_nn` value which minimize the test error. Therefore, in this case, the model with `k_nn` $= 7$ avoids overfitting as well as gives a good prediction.  
+Based on the training error, I will choose the model with `k_nn` $= 1$ because it has no error. However, if I look at CV misclassification rate, I will choose the model with `k_nn` $= 7$ because the CV misclassification rate steadily decreases when `k_nn` goes from $1$ to $7$ and starts to fluctuates after $7$.  
+In practice, I will choose `k_nn`$= 7$. From the lecture, we know that `k_nn` $= 1$ always gives the smallest error on training datasets, which is the result from overfitting, and the training error steadily increases as we increase the value of `k_nn`. The test error, on the other hand, has a U-shape as we increasing the value of `k_nn`. By using cross-validation, we are able to test our model on all data, and thus identify the optimal `k_nn` value which minimize the test error. Therefore, in this case, the model with `k_nn` $= 7$ avoids overfitting as well as gives a good prediction.  
 
 # Tutorial of my_rf_cv
 ```{r}
@@ -120,7 +120,7 @@ outputsd <- data.frame("k" = k,
                        "std.errors" = sds)
 kable(outputsd)
 ```
-Both the box plot and the table of error statistic show a decreasing `std. error` as the number of folds we have in the data goes from $1$ to $10$. Variance of cross-validation is more U-shaped than linearly increasing. The `std. error` decreases at first because the denominator increases as we increase the number of folds of the data, and it increases later because as $k$ gets arbitraryly large, the folds become highly correlated.
+Both the box plot and the table of error statistics show a decreasing `std. error` as the number of folds we have in the data goes from $1$ to $10$. Variance of cross-validation is more U-shaped than linearly increasing. The `std. error` decreases at first because the denominator increases as we increase the number of folds of the data, and it increases later because as $k$ gets arbitrarily large, the folds become highly correlated.
 
 
 
