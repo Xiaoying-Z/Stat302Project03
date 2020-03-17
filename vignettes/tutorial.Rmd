@@ -109,7 +109,11 @@ for (i in 1:3){
 my_data = data.frame("k" = rep(c("2", "5", "10"), each = 30), 
                      "error" = c(cv_err[1,], cv_err[2,], cv_err[3,]))
 names(my_data)[2] = "error"
-ggplot(my_data, aes(x = k, y = error, group = k)) + geom_boxplot()
+ggplot(my_data, aes(x = k, y = error, group = k)) + geom_boxplot() + 
+  labs(title = "Boxplot for CV Estimated MSE",
+       caption = "Graph 2") + theme_bw(base_size = 15) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.caption = element_text(hjust = 0.5))
 
 sds = rep(NA, 3)
 for (i in 1:3){
@@ -120,7 +124,7 @@ outputsd <- data.frame("k" = k,
                        "std.errors" = sds)
 kable(outputsd)
 ```
-Both the box plot and the table of error statistics show a decreasing `std. error` as the number of folds we have in the data goes from $1$ to $10$. Variance of cross-validation is more U-shaped than linearly increasing. The `std. error` decreases at first because the denominator increases as we increase the number of folds of the data, and it increases later because as $k$ gets arbitrarily large, the folds become highly correlated.
+Both graph 2 and the table of error statistics show a decreasing `std. error` as the number of folds we have in the data goes from $1$ to $10$. Variance of cross-validation is more U-shaped than linearly increasing. The `std. error` decreases at first because the denominator increases as we increase the number of folds of the data, and it increases later because as $k$ gets arbitrarily large, the folds become highly correlated.
 
 
 
