@@ -13,7 +13,8 @@ my_rf_cv(k)
 a numeric with the cross-validation error
 }
 \description{
-This function raises input to a power
+This function implements Breiman's random forest algorithm for
+  classification and regression.
 }
 \examples{
 my_rf_cv(2)

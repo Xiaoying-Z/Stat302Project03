@@ -1,6 +1,7 @@
 #' Random Forest function
 #'
-#' This function raises input to a power
+#' This function implements Breiman's random forest algorithm for
+#'   classification and regression.
 #' @param k number of folds
 #' @keywords prediction
 #'

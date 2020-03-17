@@ -21,7 +21,7 @@ a list with a vector of the predicted class and
   a numeric with the training misclassification rate
 }
 \description{
-This function raises input to a power
+This function uses k-nearest neighbour classification for test set from training set.
 }
 \examples{
 my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)

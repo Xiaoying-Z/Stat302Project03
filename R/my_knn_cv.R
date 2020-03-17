@@ -1,6 +1,6 @@
 #' K-nearest Neighbors function
 #'
-#' This function raises input to a power
+#' This function uses k-nearest neighbour classification for test set from training set.
 #' @param train the training data set
 #' @param cl factor of true classifications of training set
 #' @param k_nn number of neighbours considered
