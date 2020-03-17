@@ -19,3 +19,4 @@ This function raises input to a power
 my_rf_cv(2)
 
 }
+\keyword{prediction}

@@ -2,6 +2,7 @@
 #'
 #' This function raises input to a power
 #' @param k number of folds
+#' @keywords prediction
 #'
 #' @return a numeric with the cross-validation error
 #'

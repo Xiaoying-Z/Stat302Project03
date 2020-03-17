@@ -17,7 +17,8 @@ my_knn_cv(train, cl, k_nn, k_cv)
 }
 \value{
 a list with a vector of the predicted class and
-  a numeric with the cross-validation misclassification error
+  a numeric with the cross-validation misclassification rate
+  a numeric with the training misclassification rate
 }
 \description{
 This function raises input to a power
@@ -26,3 +27,4 @@ This function raises input to a power
 my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)
 
 }
+\keyword{prediction}

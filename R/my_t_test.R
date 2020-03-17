@@ -5,6 +5,7 @@
 #' @param alternative A character string specifying the alternative hypothesis,
 #'   must be one of \code{two.sided}, \code{greater} or \code{less}.
 #' @param mu A number indication the null hupothesis value of mean.
+#' @keywords ttest
 #'
 #' @return A list contains the numeric test statistic, the degree of freedom,
 #'   the value of the parameter \code{alternative}, and the numeric \code{p-value}.
@@ -16,7 +17,9 @@
 #'
 #' @export
 my_t.test <- function(x, alternative, mu){
-  if (alternative != "two.sided" &
+  if(!is.numeric(x) | !is.numeric(mu)){
+    stop("Inpout for x and mean must be numeric.")
+  } else if (alternative != "two.sided" &
       alternative != "less" &
       alternative != "greater"){
     stop('The second parameter for alternative hypothesis only accepts

@@ -26,3 +26,4 @@ of variance and analysis of covariance.
 my_model <- my_lm(Sepal.Length~Sepal.Width, data = my_iris)
 
 }
+\keyword{regression}

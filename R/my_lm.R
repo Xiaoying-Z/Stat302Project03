@@ -8,6 +8,7 @@
 #' @param data An optional data frame, list or environment
 #'   (or object coercible by as.data.frame to a data frame) containing
 #'   the variables in the model.
+#' @keywords regression
 #'
 #' @return Numeric represrnting the coefficients and statistics of the fitting
 #'

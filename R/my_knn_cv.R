@@ -5,9 +5,11 @@
 #' @param cl factor of true classifications of training set
 #' @param k_nn number of neighbours considered
 #' @param k_cv integer representing the number of folds
+#' @keywords prediction
 #'
 #' @return a list with a vector of the predicted class and
-#'   a numeric with the cross-validation misclassification error
+#'   a numeric with the cross-validation misclassification rate
+#'   a numeric with the training misclassification rate
 #'
 #' @examples
 #' my_knn_cv(my_iris[, -5], my_iris$Species, 1, 5)
@@ -32,6 +34,7 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     cv_err[i] <- sum(class_output != cl_test)/length(cl_test)
   }
   output <- knn(train = train, test = train, cl = cl, k = k_nn)
-  my_output <- list(class_output, mean(cv_err))
+  train_err <- sum(output != cl)/length(cl)
+  my_output <- list(class_output, mean(cv_err), train_err)
   return(my_output)
 }
