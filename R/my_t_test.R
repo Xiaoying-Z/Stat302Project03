@@ -5,7 +5,7 @@
 #' @param alternative A character string specifying the alternative hypothesis,
 #'   must be one of \code{two.sided}, \code{greater} or \code{less}.
 #' @param mu A number indication the null hupothesis value of mean.
-#' @keywords ttest
+#' @keywords inference
 #'
 #' @return A list contains the numeric test statistic, the degree of freedom,
 #'   the value of the parameter \code{alternative}, and the numeric \code{p-value}.

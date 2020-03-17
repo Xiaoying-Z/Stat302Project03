@@ -25,4 +25,4 @@ This function performs one and two sample t-tests on vectors of data.
 my_t.test(my_iris$Sepal.Length, "less", 5)
 
 }
-\keyword{ttest}
+\keyword{inference}
