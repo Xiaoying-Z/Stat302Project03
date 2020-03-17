@@ -13,6 +13,10 @@ vignette: >
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ```
 
+# Introduction
+Here, we introduce `Stat302Project03`, a data analysis packages with the following functions: `my_t_test`, `my_lm`, `my_knn_cv`, and `my_rf_cv` which are developed based on `t.test()`, `lm()`, `k-Nearest Neighbours`, and `random forest` respectively.  
+We use `gapminder` as our example dataset.  
+Install `Stat302Project03` using:  
 ```{r, eval = FALSE}
 devtools::install_github("Xiaoying-Z/Stat302Project03", 
                          build_vignette = TRUE, build_opts = c())
@@ -60,8 +64,8 @@ ggplot(my_data,aes(x = Actual, y = Fitted, color = Continent)) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0.5)
 )
-coeff <- scientific(test$Estimate[2], digit = 3)
-pval <- scientific(test$Pr...t..[2], digit = 3)
+coeff <- formatC(test$Estimate[2], digit = 3)
+pval <- formatC(test$Pr...t..[2], digit = 3)
 ```
 The coefficient of `gdpPercap` of the regression model is `r coeff`. This tells us that there is a positive but not strong relation between `gdpPercap` and `lifeExp`.  
 The `p-value` for the coefficient of `gdpPercap` is `r pval`, which is less than $\alpha = 0.05$, telling us that we can reject the null hypothesis "cofficient of `gdpPercap` $= 0$" in favor of the alternative hupothesis: `gdpPercap` is statistically signifigent for interpreting `lifeExp`.  
